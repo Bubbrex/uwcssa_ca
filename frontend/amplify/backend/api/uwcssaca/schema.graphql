@@ -1,3 +1,19 @@
+type User @model
+  @auth(rules: [
+      { allow: owner,ownerField: "owner" }
+      # allow admins to create, update and delete
+      { allow: groups, groups: ["admin"] }
+      # allow all authenticated users to view
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view
+      { allow: public, operations: [read], provider: iam }
+    ]) {
+  id: ID!
+  username: String!
+  email: String! 
+  owner:String!
+}
+
 type Topic
   @model
   @auth(

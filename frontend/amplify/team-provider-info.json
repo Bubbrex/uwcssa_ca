@@ -39,5 +39,57 @@
         }
       }
     }
+  },
+  "developbu": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-uwcssaca-developbu-133634-authRole",
+      "UnauthRoleArn": "arn:aws:iam::537666141782:role/amplify-uwcssaca-developbu-133634-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::537666141782:role/amplify-uwcssaca-developbu-133634-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-uwcssaca-developbu-133634-deployment",
+      "UnauthRoleName": "amplify-uwcssaca-developbu-133634-unauthRole",
+      "StackName": "amplify-uwcssaca-developbu-133634",
+      "StackId": "arn:aws:cloudformation:us-east-2:537666141782:stack/amplify-uwcssaca-developbu-133634/20479910-22de-11ec-aba2-0ab5f43dc4ac",
+      "AmplifyAppId": "dmsl2mfclfxp3"
+    },
+    "categories": {
+      "auth": {
+        "uwinAuth": {
+          "googleClientId": "1067602080073-3hea9nvda1a6uemhpngqj50eh2mrtlv3.apps.googleusercontent.com"
+        }
+      },
+      "function": {
+        "uwinAuthPostConfirmation": {
+          "GROUP": "anyone",
+          "deploymentBucketName": "amplify-uwcssaca-developbu-133634-deployment",
+          "s3Key": "amplify-builds/uwinAuthPostConfirmation-46586877466534425639-build.zip"
+        }
+      }
+    }
+  },
+  "testone": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-uwcssaca-testone-140629-authRole",
+      "UnauthRoleArn": "arn:aws:iam::537666141782:role/amplify-uwcssaca-testone-140629-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::537666141782:role/amplify-uwcssaca-testone-140629-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-uwcssaca-testone-140629-deployment",
+      "UnauthRoleName": "amplify-uwcssaca-testone-140629-unauthRole",
+      "StackName": "amplify-uwcssaca-testone-140629",
+      "StackId": "arn:aws:cloudformation:us-east-2:537666141782:stack/amplify-uwcssaca-testone-140629/4df86340-22e2-11ec-86a5-02ea4533fe38",
+      "AmplifyAppId": "dmsl2mfclfxp3"
+    },
+    "categories": {
+      "auth": {
+        "uwinAuth": {}
+      },
+      "function": {
+        "uwinAuthPostConfirmation": {
+          "GROUP": "anyone",
+          "deploymentBucketName": "amplify-uwcssaca-testone-140629-deployment",
+          "s3Key": "amplify-builds/uwinAuthPostConfirmation-56336751592b32795141-build.zip"
+        }
+      }
+    }
   }
 }

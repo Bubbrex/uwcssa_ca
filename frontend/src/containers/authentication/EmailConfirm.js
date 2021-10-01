@@ -97,4 +97,4 @@ const EmailConfirm = ({ emailConfirm }) => {
 };
 
 
-export default connect( { emailConfirm })(EmailConfirm);
+export default connect( null,{ emailConfirm })(EmailConfirm);
