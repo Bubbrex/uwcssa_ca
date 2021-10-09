@@ -1,5 +1,5 @@
-import { Provider, useDispatch, useSelector } from "react-redux";
-import React, { useEffect, useState } from "react";
+import { Provider, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -22,7 +22,6 @@ import ForumTopic from "./components/Forum/CurdTesting/ForumTopic";
 import GraphQLTesting from "./containers/GraphQLTesting";
 import Header from "./containers/Header";
 import Home from "./containers/Home";
-import MuiAlert from "@material-ui/lab/Alert";
 import MyAccount from "./containers/account/MyAccount";
 import PostArticle from "./containers/staff/Article/PostArticle";
 import PostUwcssaJob from "./containers/staff/UwcssaJob/PostUwcssaJob";
@@ -31,7 +30,6 @@ import ResetPassword from "./containers/authentication/ResetPassword";
 import ScrollToTop from "./Hooks/ScrollToTop";
 import SignIn from "./containers/authentication/SignIn";
 import SignUp from "./containers/authentication/SignUp";
-import { Snackbar } from "@mui/material";
 import Staff from "./containers/staff/Staff";
 import UwcssaJobsPreview from "./containers/staff/UwcssaJob/UwcssaJobsPreview";
 import awsconfig from "./aws-exports";
@@ -56,32 +54,16 @@ const useStyles = makeStyles({
     },
   },
 });
+
 export default function App() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const [signInOpen, setSignInOpen] = useState(false);
   useEffect(() => {
     dispatch(load_user());
     dispatch(setUserCounts());
-    if (isAuthenticated) {
-      return setSignInOpen(true);
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const isAuthenticated = useSelector(
-    (state) => state.userAuth.isAuthenticated
-  );
-  function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-  }
-
-  const handleSignInClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setSignInOpen(false);
-  };
 
   return (
     <Provider store={store}>
@@ -100,11 +82,7 @@ export default function App() {
               />
               <Route path="/account/myAccount" exact component={MyAccount} />
               <Route path="/staff" exact component={Staff} />
-              <Route
-                path="/staff/article"
-                exact
-                component={ArticlesPreview}
-              />{" "}
+              <Route path="/staff/article" exact component={ArticlesPreview} />
               <Route
                 path="/staff/uwcssaJob"
                 exact
@@ -157,16 +135,6 @@ export default function App() {
           </div>
           <Footer />
         </Router>
-        <Snackbar
-          open={signInOpen}
-          autoHideDuration={2000}
-          onClose={handleSignInClose}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        >
-          <Alert onClose={handleSignInClose} severity="success">
-            登陆成功! 欢迎来到 UWCSSA.CA
-          </Alert>
-        </Snackbar>
       </ThemeProvider>
     </Provider>
   );

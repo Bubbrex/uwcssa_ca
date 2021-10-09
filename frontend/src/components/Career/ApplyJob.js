@@ -9,7 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 
 import API from "@aws-amplify/api";
-import Alert from "@material-ui/lab/Alert";
+import Alert from "@mui/material/Alert";
 import Storage from "@aws-amplify/storage";
 import { createUwcssaJobResume } from "../../graphql/mutations";
 import { getUwcssaJob } from "../../graphql/queries";
